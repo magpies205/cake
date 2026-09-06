@@ -26,14 +26,15 @@
 
 <body class="index-page" style="background: linear-gradient(180deg, #ffffff 0%, #fff5f8 40%, #f0f4ff 100%); background-attachment: scroll;">
 
- <header id="header" class="header sticky-top" style="background: var(--background-color, #ffffff); border-bottom: none;">
-   <div id="headerMagic" class="container-fluid position-relative d-flex align-items-center justify-content-between" style="cursor: pointer;">
+ <header id="header" class="header sticky-top" style="background: var(--background-color, #ffffff); border-bottom: none; width: 100%;">
+   <!-- Removed Bootstrap side padding so header background covers 100% width -->
+   <div id="headerMagic" class="container-fluid position-relative d-flex align-items-center justify-content-between px-0" style="cursor: pointer;">
 
-     <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+     <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0 ps-3">
        <img src="assets/img/Megancake.png" alt="Cake Logo">
      </a>
 
-     <div class="header-cupcakes d-none d-lg-flex">
+     <div class="header-cupcakes d-none d-lg-flex pe-3">
        <span>🧁</span>
        <span>🍰</span>
        <span>🎂</span>
@@ -45,6 +46,7 @@
 
    </div>
 
+   <!-- Stars inside header sharing full background -->
    <div class="pastel-stars">
      <i class="bi bi-star-fill" style="color:#ffcce7;"></i>
      <i class="bi bi-star-fill" style="color:#d6c8ff;"></i>
@@ -60,9 +62,10 @@
  </header>
 
  <main class="main">
-   <div class="heading" style="background: #ffffff; padding-top: 20px; padding-bottom: 20px;">
+   <!-- White background section starting at introduction -->
+   <div class="heading" style="background: #ffffff; padding-top: 20px; padding-bottom: 20px; width: 100%;">
 
-     <div class="row d-flex justify-content-center text-center px-3">
+     <div class="row d-flex justify-content-center text-center px-3 mx-0">
        <div class="col-lg-8">
          <h1 class="candy-title">My name is Megan Archibald.</h1>
          <p class="mb-0 text-secondary" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6; font-family: 'Inter', sans-serif;">I'm learning cake decorating. I love to bake/decorate cakes for fun. I got a cake decorating kit and took nine hours of cake class. This webpage is where I will showcase my cakes and track my progress at cake decorating!</p>

@@ -8,30 +8,25 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="index-page" style="background: linear-gradient(180deg, #ffffff 0%, #fff5f8 40%, #f0f4ff 100%); background-attachment: fixed;">
+<body class="index-page" style="background: linear-gradient(180deg, #ffffff 0%, #fff5f8 40%, #f0f4ff 100%); background-attachment: scroll;">
 
  <header id="header" class="header sticky-top" style="background: var(--background-color, #ffffff); border-bottom: none;">
-   <!-- Clicking the header triggers the massive emoji sprinkle explosion -->
    <div id="headerMagic" class="container-fluid position-relative d-flex align-items-center justify-content-between" style="cursor: pointer;">
 
      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
@@ -54,10 +49,8 @@
  </header>
 
  <main class="main">
-   <!-- Page Title -->
    <div class="heading" style="background: transparent; padding-top: 20px;">
 
-     <!-- Cute Pastel Star Border at top of title section -->
      <div class="pastel-stars">
        <i class="bi bi-star-fill" style="color:#ffcce7;"></i>
        <i class="bi bi-star-fill" style="color:#d6c8ff;"></i>
@@ -69,7 +62,7 @@
        <i class="bi bi-star-fill" style="color:#fff5ba;"></i>
      </div>
 
-     <div class="row d-flex justify-content-center text-center mt-4">
+     <div class="row d-flex justify-content-center text-center mt-4 px-3">
        <div class="col-lg-8">
          <h1 class="candy-title">My name is Megan Archibald.</h1>
          <p class="mb-0 text-secondary" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6; font-family: 'Inter', sans-serif;">I'm learning cake decorating. I love to bake/decorate cakes for fun. I got a cake decorating kit and took nine hours of cake class. This webpage is where I will showcase my cakes and track my progress at cake decorating!</p>
@@ -77,9 +70,22 @@
      </div>
 
    </div>
-   <!-- End Page Title -->
-
    <style>
+     /* Mobile Viewport Fixes */
+     @media (max-width: 768px) {
+       body.index-page {
+         background-attachment: scroll !important;
+         overflow-x: hidden !important;
+       }
+       .gallery {
+         padding-left: 10px !important;
+         padding-right: 10px !important;
+       }
+       .gallery-item {
+         animation: none !important; /* Prevents mobile shift during scrolling */
+       }
+     }
+
      /* Cotton Candy Typography Styling */
      .candy-title {
        font-weight: 800;
@@ -105,6 +111,7 @@
        padding: 8px 0;
        background: linear-gradient(90deg, rgba(255,227,222,0.4), rgba(255,240,243,0.4), rgba(232,244,255,0.4), rgba(255,227,222,0.4));
        font-size: 20px;
+       overflow: hidden;
      }
 
      /* Middle cupcakes in header */
@@ -154,7 +161,6 @@
      .gallery-item {
        border-radius: 16px;
        overflow: hidden;
-       /* Frosted Sugar approach: semi-transparent white allows background gradient to slide underneath beautifully */
        background: rgba(255, 255, 255, 0.45);
        backdrop-filter: blur(10px);
        -webkit-backdrop-filter: blur(10px);
@@ -233,7 +239,7 @@
        box-shadow: 0 6px 20px rgba(140, 166, 255, 0.5);
      }
 
-     /* Large decorative sugar studs on the boxes */
+     /* Decorative sugar studs */
      .gallery-item::before {
        content: '🌸';
        position: absolute;
@@ -285,30 +291,13 @@
          opacity: 0;
        }
      }
-
-     /* Cursor trail particles styling */
-     .trail-particle {
-       position: fixed;
-       pointer-events: none;
-       font-size: 14px;
-       z-index: 9999;
-       animation: fadeDown 1s ease-out forwards;
-       user-select: none;
-     }
-
-     @keyframes fadeDown {
-       0% { transform: translateY(0) scale(1); opacity: 1; }
-       100% { transform: translateY(20px) scale(0.5); opacity: 0; }
-     }
    </style>
 
-   <!-- Gallery Section -->
    <section id="gallery" class="gallery section">
      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
        <div class="row gy-4 justify-content-center">
 
-         <!-- Item 1: Baby Shower -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/ppflower.png" class="img-fluid" alt="Pink and purple cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -319,8 +308,51 @@
            </div>
          </div>
 
-         <!-- Item 2: Father's Day Squirrel -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+           <div class="gallery-item h-100">
+             <img src="assets/img/gallery/dinosaurcupcakes.jpeg" class="img-fluid" alt="Dinosaur Cupcakes">
+             <div class="gallery-links d-flex align-items-center justify-content-center">
+               <a href="assets/img/gallery/dinosaurcupcakes.jpeg" data-description="Dinosaur Cupcakes. First time utilizing chocolate candy molds." title="Dinosaur Cupcakes" class="glightbox preview-link">
+                 <span>View Details 🍰</span>
+               </a>
+             </div>
+           </div>
+         </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+           <div class="gallery-item h-100">
+             <img src="assets/img/gallery/sea.jpeg" class="img-fluid" alt="Sea Rice Crispies">
+             <div class="gallery-links d-flex align-items-center justify-content-center">
+               <a href="assets/img/gallery/sea.jpeg" data-description="Sea Rice Crispies. Used chocolate molds to create sea chocolate." title="Sea Rice Crispies" class="glightbox preview-link">
+                 <span>View Details 🍰</span>
+               </a>
+             </div>
+           </div>
+         </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+           <div class="gallery-item h-100">
+             <img src="assets/img/gallery/sunsetcrow.jpeg" class="img-fluid" alt="Sunset Crow Cake">
+             <div class="gallery-links d-flex align-items-center justify-content-center">
+               <a href="assets/img/gallery/sunsetcrow.jpeg" data-description="Sunset Crow Cake. Hand piped a crow to match a crow bird feeder I had decorated. Was a lot of fun." title="Sunset Crow Cake" class="glightbox preview-link">
+                 <span>View Details 🍰</span>
+               </a>
+             </div>
+           </div>
+         </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+           <div class="gallery-item h-100">
+             <img src="assets/img/gallery/golf.jpeg" class="img-fluid" alt="Golf Cake">
+             <div class="gallery-links d-flex align-items-center justify-content-center">
+               <a href="assets/img/gallery/golf.jpeg" data-description="Had a lot of fun making a golf cake. Practiced grass piping." title="Golf Cake" class="glightbox preview-link">
+                 <span>View Details 🍰</span>
+               </a>
+             </div>
+           </div>
+         </div>
+
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/squirrell.png" class="img-fluid" alt="Squirrel cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -331,8 +363,7 @@
            </div>
          </div>
 
-         <!-- Item 3: Crow Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/crow.png" class="img-fluid" alt="Crow cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -343,8 +374,7 @@
            </div>
          </div>
 
-         <!-- Item 4: Ocean Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/ocean.png" class="img-fluid" alt="Ocean cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -355,8 +385,7 @@
            </div>
          </div>
 
-         <!-- Item 5: Duck Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/duck.png" class="img-fluid" alt="Duck cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -367,8 +396,7 @@
            </div>
          </div>
 
-         <!-- Item 6: Pink and Blue Flower -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/pbflower.jpeg" class="img-fluid" alt="Pink and blue flower cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -379,8 +407,7 @@
            </div>
          </div>
 
-         <!-- Item 7: Chocolate Flower -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/chocflower.jpeg" class="img-fluid" alt="Chocolate flower cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -391,8 +418,7 @@
            </div>
          </div>
 
-         <!-- Item 8: Heart Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/heartcake.jpeg" class="img-fluid" alt="Heart cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -403,8 +429,7 @@
            </div>
          </div>
 
-         <!-- Item 9: Black Forest -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/blackforest.jpeg" class="img-fluid" alt="Black forest cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -415,8 +440,7 @@
            </div>
          </div>
 
-         <!-- Item 10: Fall Cupcakes -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/fallcupcakes.jpeg" class="img-fluid" alt="Fall cupcakes">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -427,8 +451,7 @@
            </div>
          </div>
 
-         <!-- Item 11: Spring Cupcakes -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/springcupcakes.png" class="img-fluid" alt="Spring cupcakes">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -439,8 +462,7 @@
            </div>
          </div>
 
-         <!-- Item 12: Valentine Brownie -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/Valentinesbrownie.jpeg" class="img-fluid" alt="Valentine brownies">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -451,8 +473,7 @@
            </div>
          </div>
 
-         <!-- Item 13: Cat Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/Cat.jpeg" class="img-fluid" alt="Cat cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -463,8 +484,7 @@
            </div>
          </div>
 
-         <!-- Item 14: Chocolate Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/Choco.jpeg" class="img-fluid" alt="Chocolate cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -475,8 +495,7 @@
            </div>
          </div>
 
-         <!-- Item 15: Space Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/spacecake1.png" class="img-fluid" alt="Space cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -487,8 +506,7 @@
            </div>
          </div>
 
-         <!-- Item 16: Alien Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/alien.png" class="img-fluid" alt="Alien cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -499,8 +517,7 @@
            </div>
          </div>
 
-         <!-- Item 17: Pink Flower -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/flower.png" class="img-fluid" alt="Pink flower cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -511,8 +528,7 @@
            </div>
          </div>
 
-         <!-- Item 18: Isaac Newton -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/isaac.png" class="img-fluid" alt="Sir Isaac Newton cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -523,8 +539,7 @@
            </div>
          </div>
 
-         <!-- Item 19: Dino Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/dino.png" class="img-fluid" alt="Brachiosaurus cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -535,8 +550,7 @@
            </div>
          </div>
 
-         <!-- Item 20: Alien Cake 2 -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/alien2.png" class="img-fluid" alt="Alien cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -547,8 +561,7 @@
            </div>
          </div>
 
-         <!-- Item 21: Eye Cake -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/eye.png" class="img-fluid" alt="Chocolate eye cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -559,8 +572,7 @@
            </div>
          </div>
 
-         <!-- Item 22: Father's Day -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/fathers.png" class="img-fluid" alt="Father's Day cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -571,8 +583,7 @@
            </div>
          </div>
 
-         <!-- Item 23: Jelly Bean -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/jelly.png" class="img-fluid" alt="Jelly bean flowers cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -583,8 +594,7 @@
            </div>
          </div>
 
-         <!-- Item 24: Frankenstein -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/frank.png" class="img-fluid" alt="Frankenstein cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -595,8 +605,7 @@
            </div>
          </div>
 
-         <!-- Item 25: Hamburger -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/hamburger.png" class="img-fluid" alt="Hamburger cake">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -607,8 +616,7 @@
            </div>
          </div>
 
-         <!-- Item 26: Cookie Monster -->
-         <div class="col-xl-3 col-lg-4 col-md-6">
+         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
            <div class="gallery-item h-100">
              <img src="assets/img/gallery/monster.png" class="img-fluid" alt="Cookie Monster cupcakes">
              <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -641,16 +649,13 @@
    <div class="line"></div>
  </div>
 
- <!-- Vendor JS Files -->
  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="assets/vendor/php-email-form/validate.js"></script>
  <script src="assets/vendor/aos/aos.js"></script>
  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
- <!-- Custom Initialization & Sparkle Script -->
  <script>
-   // 1. Initialize Glightbox to use modern sidebar descriptions
    document.addEventListener('DOMContentLoaded', () => {
      const lightbox = GLightbox({
        selector: '.glightbox',
@@ -660,14 +665,12 @@
      });
    });
 
-   // 2. Header Sparkle Cascade Logic
    const headerMagic = document.getElementById('headerMagic');
    const clickEmojis = ['✨', '🧁', '🍰', '💖', '🎂', '⭐', '🌈', '🥳', '🔹', '🔸', '🌟', '🍬'];
 
    headerMagic.addEventListener('click', (e) => {
      const rect = headerMagic.getBoundingClientRect();
      
-     // Cascade of 45 colorful elements across the nav row layout
      for (let i = 0; i < 45; i++) {
        const p = document.createElement('div');
        p.className = 'sparkle-particle';
@@ -679,44 +682,21 @@
        p.style.left = `${startX}px`;
        p.style.top = `${startY}px`;
 
-       const angle = (Math.random() * Math.PI) + (Math.PI * 0.25); 
-       const distance = 80 + Math.random() * 250;
-       const moveX = Math.cos(angle) * distance;
-       const moveY = Math.sin(angle) * distance;
-       const randomRotate = -90 + Math.random() * 180;
+       const mx = (Math.random() - 0.5) * 300;
+       const my = (Math.random() - 0.5) * 300;
+       const mr = (Math.random() - 0.5) * 360;
 
-       p.style.setProperty('--mx', `${moveX}px`);
-       p.style.setProperty('--my', `${moveY}px`);
-       p.style.setProperty('--mr', `${randomRotate}px`);
+       p.style.setProperty('--mx', `${mx}px`);
+       p.style.setProperty('--my', `${my}px`);
+       p.style.setProperty('--mr', `${mr}deg`);
 
        document.body.appendChild(p);
-       setTimeout(() => p.remove(), 1500);
+
+       setTimeout(() => {
+         p.remove();
+       }, 1500);
      }
    });
-
-   // 3. Whimsical Cursor Trailing Magic on Header
-   const trailEmojis = ['✨', '🌸', '💕', '⭐', '🍬', '🔸'];
-   let lastTrailTime = 0;
-
-   headerMagic.addEventListener('mousemove', (e) => {
-     const now = Date.now();
-     if (now - lastTrailTime < 45) return; 
-     lastTrailTime = now;
-
-     const trail = document.createElement('div');
-     trail.className = 'trail-particle';
-     trail.textContent = trailEmojis[Math.floor(Math.random() * trailEmojis.length)];
-     
-     trail.style.left = `${e.clientX}px`;
-     trail.style.top = `${e.clientY}px`;
-
-     document.body.appendChild(trail);
-     setTimeout(() => trail.remove(), 1000);
-   });
  </script>
-
- <!-- Main Template JS File -->
- <script src="assets/js/main.js"></script>
-
 </body>
 </html>
